@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HowPopular</string>
+
+    <string name="views">views</string>
+    <string name="moreViews">has more views than</string>
+    <string name="higherButton">HIGHER</string>
+    <string name="lowerButton">LOWER</string>
+    <string name="correctAnswers">correct</string>
+
+</resources>

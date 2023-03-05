@@ -21,7 +21,7 @@ public class GameActivity extends AppCompatActivity {
     private int numQuestion;
     private boolean gameFinished;
     private boolean firstBackPressed;
-    private static final String winnerIndex = "PLAYER_WINNER";
+    private static final String WINNER_INDEX = "PLAYER_WINNER";
 
     private Button bHigher;
     private Button bLower;
@@ -112,8 +112,16 @@ public class GameActivity extends AppCompatActivity {
         gameFinished = true;
 
         // Change intent to GAME OVER class (send a boolean if player won or not).
-        Intent intent = new Intent(this, GameOverActivity.class);
-        intent.putExtra(winnerIndex, winner);  // Send data (boolean) to other activity.
+        Intent intent;
+        if (winner) {
+            intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); // Avoid creating a new instance, so that userDB stays equal.
+        }
+        else {
+             intent = new Intent(this, GameOverActivity.class);
+        }
+
+        intent.putExtra(WINNER_INDEX, winner);  // Send data (boolean) to other activity.
         startActivity(intent);
     }
 

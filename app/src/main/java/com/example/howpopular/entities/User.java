@@ -1,6 +1,8 @@
 package com.example.howpopular.entities;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private final String username;
     private int maxScore;
 
@@ -24,5 +26,9 @@ public class User {
         }
 
         return false;
+    }
+
+    public boolean sameUsername(String otherUsername) {
+        return username.equals(otherUsername);
     }
 }

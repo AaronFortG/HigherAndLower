@@ -2,7 +2,6 @@ package com.example.howpopular.application;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,15 +9,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.howpopular.R;
-import com.example.howpopular.entities.User;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private User loginUser;
     private Button bLogin;
     private EditText etUsername;
+    private String userName;
+    private static final String USER_INDEX = "LOGIN_USERNAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +35,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setupListeners() {
         bLogin.setOnClickListener(v -> {
+            userName = etUsername.getText().toString();
             // Check if name is valid
-            if (!etUsername.getText().toString().equals("")) {
-                LoginActivity.this.gotoMainMenu();
+            if (!userName.equals("")) {
+                gotoMainMenu();
             }
             else {
                 StyleableToast.makeText(LoginActivity.this, getString(R.string.wrongLogin), Toast.LENGTH_SHORT, R.style.wrongToastStyle).show();
@@ -50,7 +49,9 @@ public class LoginActivity extends AppCompatActivity {
     // Change activity to RankingActivity
     private void gotoMainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        intent.putExtra(USER_INDEX, userName);  // Send data (User) to other activity.
+//        setResult(RESULT_OK, intent);
+        startActivityForResult(intent, 1);
     }
 
 }

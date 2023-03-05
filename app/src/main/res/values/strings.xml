@@ -11,4 +11,8 @@
     <string name="lowerButton">LOWER</string>
     <string name="correctAnswers">correct</string>
 
+    <string name="rankingTitle">HowPopular Ranking</string>
+    <string name="rankingEmpty">Not played yet</string>
+    <string name="rankingSeparator">-</string>
+    <string name="rankingPoints">points</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Estil pel missatge del Toast de resposta correcta  -->
+    <style name="correctToastStyle">
+        <item name="stTextColor">#000</item>
+        <item name="stTextSize">18sp</item>
+        <item name="stFont">@font/ubuntu</item>
+        <item name="stColorBackground">#94ffab</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stLength">SHORT</item>
+        <item name="stRadius">8dp</item>
+        <item name="stIconStart">@drawable/baseline_check_box_24</item>
+    </style>
+    <!--  Estil pel missatge del Toast de resposta errònia  -->
+    <style name="wrongToastStyle">
+        <item name="stTextColor">@color/white</item>
+        <item name="stTextSize">18sp</item>
+        <item name="stFont">@font/ubuntu</item>
+        <item name="stColorBackground">#E91E63</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stLength">SHORT</item>
+        <item name="stRadius">8dp</item>
+        <item name="stIconStart">@drawable/cross_mark_button_svgrepo_com</item>
+    </style>
+</resources>

@@ -22,7 +22,6 @@ public class RankingActivity extends AppCompatActivity {
 
         // UI Design
         setupConnections();
-//        setupListeners();
         loadRanking();
     }
 

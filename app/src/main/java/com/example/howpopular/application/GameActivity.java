@@ -21,8 +21,8 @@ public class GameActivity extends AppCompatActivity {
     private int numQuestion;
     private boolean gameFinished;
     private boolean firstBackPressed;
-    private static final String WINNER_INDEX = "PLAYER_WINNER";
-
+    public static final String WINNER_INDEX = "PLAYER_WINNER";
+    public static final String SCORE_INDEX = "USER_SCORE";
     private Button bHigher;
     private Button bLower;
 
@@ -96,7 +96,6 @@ public class GameActivity extends AppCompatActivity {
                 }
                 break;
 
-//                isHigher ? nextQuestion() : gameOver(false);
             case LOWER:
                 if (isHigher) {
                     gameOver(false);
@@ -113,16 +112,11 @@ public class GameActivity extends AppCompatActivity {
 
         // Change intent to GAME OVER class (send a boolean if player won or not).
         Intent intent;
-        if (winner) {
-            intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); // Avoid creating a new instance, so that userDB stays equal.
-        }
-        else {
-             intent = new Intent(this, GameOverActivity.class);
-        }
-
+        intent = new Intent(this, GameOverActivity.class);
         intent.putExtra(WINNER_INDEX, winner);  // Send data (boolean) to other activity.
+        intent.putExtra(SCORE_INDEX, numQuestion - 1);
         startActivity(intent);
+        finish();   // Avoid user uses the back button.
     }
 
     private void nextQuiz() {
@@ -144,7 +138,7 @@ public class GameActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void updateDesignView() {
         tvPreviousQuizName.setText(previousQuiz.getName());
-        tvPreviousQuizPopularity.setText(currentQuiz.getValue() + " " + getString(R.string.views));
+        tvPreviousQuizPopularity.setText(previousQuiz.getValue() + " " + getString(R.string.views));
         tvCorrectAnswers.setText((numQuestion - 1) + " " + getString(R.string.correctAnswers));
         ivPreviousQuizImage.setImageBitmap(previousQuiz.getImage());
 

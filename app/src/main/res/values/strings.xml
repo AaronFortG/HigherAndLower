@@ -15,4 +15,12 @@
     <string name="rankingEmpty">Not played yet</string>
     <string name="rankingSeparator">-</string>
     <string name="rankingPoints">points</string>
+
+    <string name="quizWinner">Congratulations for winning!</string>
+    <string name="quizLoser">You lost the game…</string>
+    <string name="score">You just achieved</string>
+    <string name="score2">points</string>
+
+    <string name="mainMenuButton">Main Menu</string>
+    <string name="rankingButton">Ranking</string>
 </resources>

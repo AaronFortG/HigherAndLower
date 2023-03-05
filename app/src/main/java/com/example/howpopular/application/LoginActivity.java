@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    // Change activity to RankingActivity
+    // Change activity to MainActivity
     private void gotoMainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(USER_INDEX, userName);  // Send data (User) to other activity.

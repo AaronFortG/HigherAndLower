@@ -110,6 +110,9 @@ public class GameActivity extends AppCompatActivity {
     private void gameOver(boolean winner) {
         gameFinished = true;
 
+        // Update user score (in case it's higher).
+        MainActivity.currentUser.newScore(numQuestion - 1);
+
         // Change intent to GAME OVER class (send a boolean if player won or not).
         Intent intent;
         intent = new Intent(this, GameOverActivity.class);

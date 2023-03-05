@@ -50,8 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     private void gotoMainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(USER_INDEX, userName);  // Send data (User) to other activity.
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         setResult(RESULT_OK, intent);
-        startActivityForResult(intent, 1);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing
     }
 
 }

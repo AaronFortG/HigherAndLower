@@ -35,6 +35,7 @@
 
         <activity
             android:name=".application.MainActivity"
+            android:launchMode="singleInstance"
             android:exported="true" />
 
     </application>

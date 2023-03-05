@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button bLogout;
     private static ArrayList<User> userDB;
     private static final String KEY_INDEX = "index";
-    private User currentUser;
+    public static User currentUser;
     private static final int ID_LOGIN_ACTIVITY = 1;
 
     @Override
@@ -54,21 +54,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
-            // Restore the user list from the saved bundle
-            String username = getIntent().getStringExtra("LOGIN_USERNAME");
-            loginUser(username);
-            userDB = (ArrayList<User>) savedInstanceState.getSerializable(KEY_INDEX);
-        } else {
-            // Initialize the user list if it's the first time the activity is created
-            userDB = new ArrayList<>();
-        }
-
         // UI Design
         setupConnections();
         setupListeners();
 
+        // Get the information when this activity is launched.
         String username = getIntent().getStringExtra("LOGIN_USERNAME");
+        loginUser(username);
+    }
+
+    // Method triggered when activity is brought to front.
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+
+        // Get the information when this activity is launched.
+        String username = intent.getStringExtra("LOGIN_USERNAME");
         loginUser(username);
     }
 
@@ -100,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // If user does not exist, add it to list.
-        if (currentUser == null) {
+        // If user does not exist, update current user and add it to list.
+        if (currentUser == null || !currentUser.sameUsername(username)) {
             currentUser = new User(username);
             userDB.add(currentUser);
         }

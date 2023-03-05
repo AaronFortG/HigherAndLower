@@ -12,7 +12,7 @@
         android:theme="@style/Theme.HowPopular" tools:targetApi="31">
 
         <activity
-            android:name=".application.MainActivity"
+            android:name=".application.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,10 @@
 
         <activity
             android:name=".application.GameOverActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".application.MainActivity"
             android:exported="true" />
 
     </application>

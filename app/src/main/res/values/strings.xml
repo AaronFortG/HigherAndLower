@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">HowPopular</string>
 
+    <string name="loginHint">Your Username</string>
+    <string name="loginButton">Log in</string>
+    <string name="wrongLogin">That username is not valid!</string>
+
     <string name="views">views</string>
     <string name="moreViews">has more views than</string>
     <string name="higherButton">HIGHER</string>

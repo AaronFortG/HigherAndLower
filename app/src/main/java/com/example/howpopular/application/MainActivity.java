@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.howpopular.entities.Quiz;
 import com.example.howpopular.R;
-import com.example.howpopular.entities.FileParser;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -8,4 +8,21 @@ public class User {
         this.username = username;
         maxScore = 0;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public int getMaxScore() {
+        return maxScore;
+    }
+
+    public boolean newScore(int newScore) {
+        if (newScore > maxScore) {
+            maxScore = newScore;
+            return true;
+        }
+
+        return false;
+    }
 }

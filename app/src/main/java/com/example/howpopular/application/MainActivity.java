@@ -1,5 +1,6 @@
 package com.example.howpopular.application;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,9 +19,17 @@ public class MainActivity extends AppCompatActivity {
     private boolean loggedIn;   // Check if user is logged to show the username or the text field.
     private Button bStartGame;
     private Button bRanking;
+    private Button bLogout;
     private static ArrayList<User> userDB;
+    private static final String KEY_INDEX = "index";
     private User currentUser;
     private static final int ID_LOGIN_ACTIVITY = 1;
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putSerializable(KEY_INDEX, userDB);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -40,25 +49,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void loginUser(String username) {
-        // Check if user already exists.
-        for (User user : userDB) {
-            if (user.sameUsername(username)) {
-                currentUser = user;
-            }
-        }
-
-        // If user does not exist, add it to list.
-        if (currentUser == null) {
-            currentUser = new User(username);
-            userDB.add(currentUser);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            // Restore the user list from the saved bundle
+            String username = getIntent().getStringExtra("LOGIN_USERNAME");
+            loginUser(username);
+            userDB = (ArrayList<User>) savedInstanceState.getSerializable(KEY_INDEX);
+        } else {
+            // Initialize the user list if it's the first time the activity is created
+            userDB = new ArrayList<>();
+        }
 
         // UI Design
         setupConnections();
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize buttons
         bStartGame = findViewById(R.id.bStartGame);
         bRanking = findViewById(R.id.bRanking);
+        bLogout = findViewById(R.id.bLogout);
         userDB = new ArrayList<>();
     }
 
@@ -79,6 +84,27 @@ public class MainActivity extends AppCompatActivity {
         // Check when buttons are clicked
         bStartGame.setOnClickListener(view -> startGame());
         bRanking.setOnClickListener(view -> gotoRanking());
+        bLogout.setOnClickListener(view -> gotoLogin());
+    }
+
+    private void gotoLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivityForResult(intent, ID_LOGIN_ACTIVITY);
+    }
+
+    private void loginUser(String username) {
+        // Check if user already exists.
+        for (User user : userDB) {
+            if (user.sameUsername(username)) {
+                currentUser = user;
+            }
+        }
+
+        // If user does not exist, add it to list.
+        if (currentUser == null) {
+            currentUser = new User(username);
+            userDB.add(currentUser);
+        }
     }
 
     // Change activity to GameActivity

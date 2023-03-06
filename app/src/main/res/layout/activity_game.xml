@@ -8,15 +8,16 @@
     android:layout_height="match_parent">
 
     <ImageView
-            android:id="@+id/ivCurrentQuizImage"
-            android:layout_width="370dp"
-            android:layout_height="370dp"
-            android:src="@drawable/rounded_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.487" app:layout_constraintBottom_toBottomOf="parent"/>
+        android:id="@+id/ivCurrentQuizImage"
+        android:layout_width="364dp"
+        android:layout_height="328dp"
+        android:src="@drawable/rounded_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
     <ImageView
             android:id="@+id/ivPreviousQuizImage"
             android:layout_width="120dp"
@@ -62,7 +63,9 @@
         app:layout_constraintBottom_toTopOf="@+id/bLower"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCurrentQuizImage"
+        app:layout_constraintVertical_bias="0.888" />
 
     <Button
         android:id="@+id/bLower"

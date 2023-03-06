@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         for (User user : userDB) {
             if (user.sameUsername(username)) {
                 currentUser = user;
+                return;
             }
         }
 

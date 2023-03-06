@@ -3,29 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tvCurre"
+    android:background="@color/soft_black"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/ivCurrentQuizImage"
-        android:layout_width="409dp"
-        android:layout_height="733dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
+            android:id="@+id/ivCurrentQuizImage"
+            android:layout_width="370dp"
+            android:layout_height="370dp"
+            android:src="@drawable/rounded_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.487" app:layout_constraintBottom_toBottomOf="parent"/>
     <ImageView
-        android:id="@+id/ivPreviousQuizImage"
-        android:layout_width="120dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
-        tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/ivPreviousQuizImage"
+            android:layout_width="120dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/rounded_image"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.937"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07"
+            tools:srcCompat="@tools:sample/avatars" android:layout_marginEnd="20dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -42,78 +46,99 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/bHigher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="@string/higherButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            android:id="@+id/bHigher"
+            android:text="@string/higherButton"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#88FF88" app:cornerRadius="100dp"
+            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
+            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bLower" android:layout_marginBottom="5dp"/>
 
     <Button
-        android:id="@+id/bLower"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/lowerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bHigher" />
+            android:id="@+id/bLower"
+            android:text="@string/lowerButton"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FF8888" app:cornerRadius="100dp"
+            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
+            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="660dp"/>
 
     <TextView
-        android:id="@+id/tvPreviousQuizName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toStartOf="@+id/ivPreviousQuizImage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/tvPreviousQuizName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toStartOf="@+id/ivPreviousQuizImage"
+            app:layout_constraintTop_toTopOf="parent" android:textAlignment="textEnd"/>
 
     <TextView
-        android:id="@+id/tvPreviousQuizPopularity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/views"
-        app:layout_constraintEnd_toEndOf="@+id/tvPreviousQuizName"
-        app:layout_constraintTop_toBottomOf="@+id/tvPreviousQuizName" />
+            android:id="@+id/tvPreviousQuizPopularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="@string/views"
+            app:layout_constraintTop_toBottomOf="@+id/tvPreviousQuizName"
+            app:layout_constraintEnd_toStartOf="@+id/ivPreviousQuizImage" android:layout_marginEnd="20dp"
+            android:layout_marginTop="3dp" android:textAlignment="textEnd"/>
 
     <TextView
-        android:id="@+id/tvCurrentQuizName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivCurrentQuizImage"
-        app:layout_constraintVertical_bias="0.919" />
+            android:id="@+id/tvCurrentQuizName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.45"
+            android:textAlignment="center"/>
+    <TextView
+            android:id="@+id/tvCurrentQuizPopularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/moreViews"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentQuizName" android:textAlignment="center"/>
 
     <TextView
-        android:id="@+id/tvCurrentQuizPopularity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/moreViews"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCurrentQuizName" />
-
-    <TextView
-        android:id="@+id/tvCorrectAnswers"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/correctAnswers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/ivPreviousQuizImage" />
+            android:id="@+id/tvCorrectAnswers"
+            android:layout_width="104dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="@string/correctAnswers"
+            app:layout_constraintEnd_toEndOf="@+id/ivPreviousQuizImage"
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="@+id/ivPreviousQuizImage"
+            app:layout_constraintTop_toBottomOf="@+id/ivPreviousQuizImage" android:textAlignment="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

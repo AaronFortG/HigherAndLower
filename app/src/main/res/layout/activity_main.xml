@@ -4,47 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/soft_black"
     tools:context=".application.MainActivity">
 
     <Button
-        android:id="@+id/bStartGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="156dp"
-        android:text="START"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+            android:id="@+id/bStartGame"
+            android:text="START"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
+            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
+            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="550dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
     <Button
-        android:id="@+id/bRanking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="RANKING"
-        app:layout_constraintEnd_toEndOf="@+id/bStartGame"
-        app:layout_constraintTop_toBottomOf="@+id/bStartGame" />
-
+            android:id="@+id/bRanking"
+            android:text="RANKING"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
+            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
+            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/bStartGame"
+            app:layout_constraintTop_toBottomOf="@+id/bStartGame" app:layout_constraintEnd_toEndOf="@+id/bStartGame"
+            android:layout_marginTop="5dp"/>
+    <Button
+            android:id="@+id/bLogout"
+            android:text="LOG OUT"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
+            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
+            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/bRanking"
+            app:layout_constraintTop_toBottomOf="@+id/bRanking" android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/bRanking"/>
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="LOG OUT"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bRanking" />
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="55sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

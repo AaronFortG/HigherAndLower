@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/soft_black</item>
+        <item name="colorPrimaryDark">@color/soft_black</item>
+        <item name="colorAccent">@color/soft_black</item>
+    </style>
     <!--  Estil pel missatge del Toast de resposta correcta  -->
     <style name="correctToastStyle">
         <item name="stTextColor">#000</item>

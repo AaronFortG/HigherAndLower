@@ -14,6 +14,9 @@ import com.example.howpopular.entities.Answer;
 import com.example.howpopular.entities.FileParser;
 import com.example.howpopular.entities.Quiz;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class GameActivity extends AppCompatActivity {
     private Quiz currentQuiz;
     private Quiz previousQuiz;
@@ -40,7 +43,9 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        // Save questions and randomize them.
         quizzes = FileParser.loadQuizes(this);
+        Collections.shuffle(Arrays.asList(quizzes));
         numQuestion = 1;
         gameFinished = false;
         firstBackPressed = true;

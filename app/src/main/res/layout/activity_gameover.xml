@@ -30,28 +30,42 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="10dp"/>
 
     <Button
-            android:id="@+id/bRanking"
-            android:text="@string/rankingButton"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
-            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
-            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bMainMenu" android:layout_marginBottom="5dp"/>
+        android:id="@+id/bRanking"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/ubuntu"
+        android:text="@string/rankingButton"
+        android:textAlignment="center"
+        android:textColor="#74748f"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/bMainMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-            android:id="@+id/bMainMenu"
-            android:text="@string/mainMenuButton"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
-            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
-            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="660dp"/>
+        android:id="@+id/bMainMenu"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="592dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/ubuntu"
+        android:text="@string/mainMenuButton"
+        android:textAlignment="center"
+        android:textColor="#74748f"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

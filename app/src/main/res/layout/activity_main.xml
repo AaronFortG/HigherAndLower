@@ -8,15 +8,24 @@
     tools:context=".application.MainActivity">
 
     <Button
-            android:id="@+id/bStartGame"
-            android:text="START"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#FFFFFF" app:cornerRadius="100dp"
-            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
-            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="550dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/bStartGame"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="488dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/ubuntu"
+        android:text="START"
+        android:textAlignment="center"
+        android:textColor="#74748f"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
             android:id="@+id/bRanking"
             android:text="RANKING"

@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_begin="206dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -46,29 +46,42 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-            android:id="@+id/bHigher"
-            android:text="@string/higherButton"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#88FF88" app:cornerRadius="100dp"
-            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
-            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bLower" android:layout_marginBottom="5dp"/>
+        android:id="@+id/bHigher"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#88FF88"
+        android:fontFamily="@font/ubuntu"
+        android:text="@string/higherButton"
+        android:textAlignment="center"
+        android:textColor="#74748f"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/bLower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-            android:id="@+id/bLower"
-            android:text="@string/lowerButton"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#FF8888" app:cornerRadius="100dp"
-            android:textColor="#74748f" android:fontFamily="@font/ubuntu" android:textStyle="bold"
-            android:typeface="normal" android:textAlignment="center" android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="660dp"/>
+        android:id="@+id/bLower"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="592dp"
+        android:backgroundTint="#FF8888"
+        android:fontFamily="@font/ubuntu"
+        android:text="@string/lowerButton"
+        android:textAlignment="center"
+        android:textColor="#74748f"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/tvPreviousQuizName"

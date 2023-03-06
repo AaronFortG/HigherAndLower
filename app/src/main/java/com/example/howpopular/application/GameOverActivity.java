@@ -50,6 +50,7 @@ public class GameOverActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         setResult(RESULT_OK, intent);
+        intent.putExtra("LOGIN_USERNAME", MainActivity.currentUser.getUsername());
         startActivityForResult(intent, 1);
     }
 

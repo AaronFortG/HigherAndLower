@@ -123,4 +123,10 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<User> getUserDB() {
         return userDB;
     }
+
+    @Override
+    public void onBackPressed() {
+        //We don't go back
+    }
+
 }

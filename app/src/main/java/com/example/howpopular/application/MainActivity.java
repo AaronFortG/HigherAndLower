@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button bStartGame;
     private Button bRanking;
     private Button bLogout;
-    private static ArrayList<User> userDB;
+    private static ArrayList<User> userDB = new ArrayList<>();
     private static final String KEY_INDEX = "index";
     public static User currentUser;
     private static final int ID_LOGIN_ACTIVITY = 1;
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         bStartGame = findViewById(R.id.bStartGame);
         bRanking = findViewById(R.id.bRanking);
         bLogout = findViewById(R.id.bLogout);
-        userDB = new ArrayList<>();
     }
 
     private void setupListeners() {

@@ -1,6 +1,7 @@
 package com.example.howpopular.application;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -53,5 +54,13 @@ public class RankingActivity extends AppCompatActivity {
             tvRanking[i].setText(getString(R.string.rankingEmpty));
             i++;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(RankingActivity.this, MainActivity.class);
+        intent.putExtra("LOGIN_USERNAME", MainActivity.currentUser.getUsername());
+        startActivity(intent);
+        super.onBackPressed();
     }
 }

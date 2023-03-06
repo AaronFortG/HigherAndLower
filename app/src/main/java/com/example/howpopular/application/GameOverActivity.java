@@ -48,7 +48,7 @@ public class GameOverActivity extends AppCompatActivity {
     // Change activity to MainActivity
     private void gotoMainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         setResult(RESULT_OK, intent);
         startActivityForResult(intent, 1);
     }
